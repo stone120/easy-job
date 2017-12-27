@@ -1,14 +1,7 @@
-### 互联网求职面试题、知识点、面经整理。祝你求职顺利。
+### 知识文摘和资源
 
-### 参与贡献
 
-加入组织，clone & push。
+记录相关IT知识以及学习资源
 
-### Relations
 
-[剑指offerJava实现](https://github.com/Lemonjing/your-offer)
-
-### 联系我
-
-- 邮箱: xmusaber@163.com
-- QQ: 932191671
+引自[it-interview/easy-job](https://github.com/it-interview/easy-job)
