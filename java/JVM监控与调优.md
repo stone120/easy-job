@@ -3,15 +3,23 @@
 1.系统崩溃前的一些现象：
 
 每次垃圾回收的时间越来越长，由之前的10ms延长到50ms左右，FullGC的时间也有之前的0.5s延长到4、5s
-
 FullGC的次数越来越多，最频繁时隔不到1分钟就进行一次FullGC
-
 年老代的内存越来越大并且每次FullGC后年老代没有内存被释放
-
 之后系统会无法响应新的请求，逐渐到达OutOfMemoryError的临界值。
 
 2.生成堆的dump文件
 通过JMX的MBean生成当前的Heap信息，大小为一个3G（整个堆的大小）的hprof文件，如果没有启动JMX可以通过Java的jmap命令来生成该文件。
+
+使用jmap -heap pid查看进程堆内存使用情况，包括使用的GC算法、堆配置参数和各代中堆内存使用情况
+
+使用jmap -histo[:live] pid查看堆内存中的对象数目、大小统计直方图，如果带上live则只统计活对象
+
+``` bash
+top -Hp pid    # get pid
+
+printf "%x\n" 21742 # change to format 16
+jstack 21711 | grep 54ee # get thread running function
+```
 
 3.分析dump文件
 
