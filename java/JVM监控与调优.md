@@ -19,6 +19,8 @@ top -Hp pid    # get pid
 
 printf "%x\n" 21742 # change to format 16
 jstack 21711 | grep 54ee # get thread running function
+
+jps -m -l
 ```
 
 3.分析dump文件
